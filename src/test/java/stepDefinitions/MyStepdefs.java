@@ -4,12 +4,12 @@ import io.cucumber.java.After;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
-import io.cucumber.java.en.When;
-import java.io.IOException;
 
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.PageFactory;
-import org.testng.Assert;
+import java.io.IOException;
+import org.junit.Assert;
+
+import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.*;
 import pages.LoginPage;
 import utils.Setup;
 
@@ -23,10 +23,7 @@ public class MyStepdefs {
         this.setup = new Setup();
         this.loginPage = new LoginPage(setup.getDriver());
     }
-//    @After
-//    public void close(){
-//        loginPage.closeChrome();
-//    }
+
     @Given("User go to login page")
     public void userGoToLoginPage() throws IOException {
         loginPage.goToLoginPage();
@@ -50,7 +47,7 @@ public class MyStepdefs {
 
     @And("Your username or password was incorrect alert is displayed")
     public void yourUsernameOrPasswordWasIncorrectAlertIsDisplayed() {
-        Assert.assertTrue(loginPage.yourUsernameOrPasswordWasIncorrectAlertIsDisplayed(),"Your username or password was incorrect.");
+        Assert.assertTrue(loginPage.yourUsernameOrPasswordWasIncorrectAlertIsDisplayed());
     }
 
     @And("User click on Forgot Password Link")
@@ -79,7 +76,7 @@ public class MyStepdefs {
 
     @And("please enter a valid email alert is displayed")
     public void pleaseEnterAValidEmailAlertIsDisplayed() {
-        Assert.assertTrue(loginPage.pleaseEnterAValidEmailAlertIsDisplayed(),"Please enter a valid email");
+        Assert.assertTrue(loginPage.pleaseEnterAValidEmailAlertIsDisplayed());
     }
 
     @And("My Account link is displayed")

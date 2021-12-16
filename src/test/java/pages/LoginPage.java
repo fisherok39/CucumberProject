@@ -57,7 +57,5 @@ public class LoginPage extends BasePage {
     public boolean myAccountLinkIsDisplayed() {
         return driver.findElement(MY_ACCOUNT_LINK).isDisplayed();
     }
-//    public void closeChrome(){
-//        driver.close();
-//    }
+
 }
