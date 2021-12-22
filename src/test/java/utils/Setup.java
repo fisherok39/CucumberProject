@@ -10,7 +10,7 @@ import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
 public class Setup {
-    // private  WebDriver driver;
+
 
     protected static WebDriver driver;
 
