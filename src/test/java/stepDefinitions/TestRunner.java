@@ -6,7 +6,7 @@ import org.junit.runner.RunWith;
 
 
 @RunWith(Cucumber.class)
-@CucumberOptions(features = {"src/test/resources/features/LoginPage.feature"}
+@CucumberOptions(features = {"src/test/resources/features"}
                      ,glue = {"stepDefinitions", "utils"})
 public class TestRunner {
 

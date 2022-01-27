@@ -17,31 +17,20 @@ import org.openqa.selenium.Platform;
 
 public class Setup {
 
-
     protected static WebDriver driver;
 
     @Before
-    public void setup() throws IOException {
-
-        //String nodeURL = "http://192.168.10.102:4444/wd/hub";
+    public void setup() throws MalformedURLException  {
+        System.setProperty("webdriver.chrome.driver", "src/test/resources/driver/chromedriver");
         DesiredCapabilities cap = new DesiredCapabilities();
-        cap.setBrowserName("chrome");
-        cap.setPlatform(Platform.LINUX);
-
-
+        URL url = new URL("http://localhost:4444/wd/hub");
+        driver = new RemoteWebDriver(url, cap);
         ChromeOptions chromeOptions = new ChromeOptions();
         driver = new ChromeDriver(chromeOptions);
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-
-
-        System.setProperty("webdriver.chrome.driver", "src/test/resources/driver/chromedriver.exe");
-        String nodeURL = "http://192.168.10.102:5555/wd/hub";
-
-        WebDriver driver = new RemoteWebDriver(new URL(nodeURL), chromeOptions);
-
-
     }
+
     public static WebDriver getDriver() {
         return driver;
     }

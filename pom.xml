@@ -55,7 +55,7 @@
 <!--                    <argLine>-->
                     <parallel>methods</parallel>
                     <threadCount>2</threadCount>
-                    <perCoreThreadCount>false</perCoreThreadCount>
+                    <perCoreThreadCount>true</perCoreThreadCount>
 <!--                    </argLine>-->
                 </configuration>
             </plugin>
